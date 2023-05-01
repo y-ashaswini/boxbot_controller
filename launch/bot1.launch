@@ -1,0 +1,10 @@
+<launch>
+   <!-- Load the urdf into the parameter server. -->
+   <!-- <param name="my_robot_description" textfile="$(find boxbot_controller)/urdf/robotmodel.xml"/> -->
+   <param name="robot_description" textfile="$(find boxbot_controller)/description/robot.urdf.xacro"/>
+    
+   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher_launch" >
+      <remap from="robot_description" to="robot_description" />
+      <remap from="joint_states" to="joint_states" />
+    </node>
+</launch>
